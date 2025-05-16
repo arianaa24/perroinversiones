@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="perroinversiones_replica_wizard_view" model="ir.ui.view">
+        <field name="name">Replicar orden</field>
+        <field name="model">replica.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Replicar orden">
+                <sheet>
+                    <group>
+                        <field name="tipo_replicacion"/>
+                        <field name="numero_veces"/>
+                    </group>
+                    <footer>
+                        <button name="replicar" string="Replicar" type="object" class="btn-primary" close="1" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_perroinversiones_replica_wizard" model="ir.actions.act_window">
+        <field name="name">replica.wizard.action</field>
+        <field name="res_model">replica.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="perroinversiones_replica_wizard_view"/>
+        <field name="target">new</field> 
+    </record>
+</odoo>
